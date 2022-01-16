@@ -47,7 +47,11 @@ body{
   font-weight: 600;
   padding: 10px;
   width: 140px;
+  transition: transform 1s;
   
+}
+.button:hover{
+  transform: scale(1.1);
 }
 .button a{
   text-decoration: none;
@@ -68,41 +72,46 @@ body{
 /*----------------- Logo Style------------------ */
 
 .logo{
-  width: 1110;
-  height: 110;
-  margin-bottom: 70px;
-  margin-left: 150px;
-  margin-right: 150px;
-  display: flex;
-  justify-content: center;
   border: 1px solid gray;
+  width: 80%;
+  margin: 10px auto;
+  padding: 30px 40px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
 }
-.logo img{
-  padding: 20px;
-}
+
 
 /* ---------------Products Collection style-------------- */
 
-.heading{
+.heading h2{
   color: #3a3a3a;
   text-align: center;
   font-size: 30px;
-  margin-bottom: 40px;
+  padding-bottom: 40px;
+  padding-top: 40px;
   
 }
 .container{
+  width: 80%;
+  margin: auto;
+  grid-gap: 20px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  
 }
 
 .product-box{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   border: 0px solid #ffffff;
-  width: 260px;
-  height: 385px;
-  padding: 20px;
+  /* width: 260px;
+  height: 385px; */
+  padding: 30px;
   /* margin-top: 30px;
   margin-left: 120px; */
-  margin: 20px 50px auto;
+  /* margin: 20px 50px auto; */
   box-shadow: 2px 2px 18px gray;
 }
 .box-item{
@@ -283,10 +292,32 @@ footer a{
   }
   
 }
+
+
 /* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 970px){
+  .container{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 @media only screen and (max-width: 768px) {
+  .product-box{
+    width: 60%;
+    margin: 0 50px;
+  }
   .container {
     grid-template-columns: repeat(1, 1fr);
+
   }
 
+}
+
+@media only screen and (max-width: 600px){
+  .product-box{
+    width: 80%;
+    margin: 0 auto;
+  }
+  .extra-item{
+    overflow: hidden;
+  }
 }
